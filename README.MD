@@ -4,6 +4,8 @@ The following platforms are supported.
 - [小説家になろう](https://syosetu.com/)
 - [ハーメルン](https://syosetu.org/)
 
+![image](https://user-images.githubusercontent.com/81360623/119659630-4eee0f80-be69-11eb-87d8-33b0eb938618.png)
+
 # Dependency
 - Docker
 - Docker Compose
