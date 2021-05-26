@@ -1,0 +1,23 @@
+{
+    "name": "WebNovelUpdateNotifier",
+
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+
+    "remoteUser": "root",
+    "workspaceFolder": "/app",
+
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/usr/local/bin/pylint",
+        "python.linting.enabled": true
+    },
+    "extensions": [
+        "ms-python.python",
+    ],
+    "postCreateCommand": "pipenv install --dev --system --skip-lock",
+    
+    "shutdownAction": "stopCompose"
+}

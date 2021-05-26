@@ -8,6 +8,6 @@ COPY app/ /app
 WORKDIR /app
 
 # Install python packages
-RUN pipenv install --system
+RUN pipenv install --system --skip-lock
 
 CMD python run.py
