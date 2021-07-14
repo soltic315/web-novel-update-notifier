@@ -1,7 +1,10 @@
 {
     "name": "WebNovelUpdateNotifier",
 
-    "dockerComposeFile": "../docker-compose.yml",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "docker-compose.yml",
+    ],
     "service": "app",
 
     "remoteUser": "root",
