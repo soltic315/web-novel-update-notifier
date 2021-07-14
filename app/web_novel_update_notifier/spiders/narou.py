@@ -25,10 +25,10 @@ class NarouSpider(scrapy.Spider):
     def parse(self, response):
         page_title = response.xpath('/html/head/title/text()').get().strip()
         
-        if page_title == 'ログイン':
+        if page_title == 'ログイン | 小説家になろう':
             yield  scrapy.FormRequest.from_response(
                 response,
-                formxpath='//*[@id="login_box"]/form',
+                formxpath='/html/body/div[2]/div/div[1]/div/div/div[1]/form[1]',
                 formdata={'narouid': self.id, 'pass': self.pw},
                 callback=self.parse
             )
