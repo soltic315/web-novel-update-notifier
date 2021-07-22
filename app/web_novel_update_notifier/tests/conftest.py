@@ -2,13 +2,13 @@ import datetime
 import os
 import tempfile
 import pytest
-from web_novel_update_notifier.lib.novel_table import NovelTable
+from web_novel_update_notifier.lib.novel_table_manager import NovelTableManager
 
 @pytest.fixture(scope='function', autouse=True)
 def NovelTableMock():
     _, tmpfile = tempfile.mkstemp()
 
-    novel_table_mock = NovelTable(file_path=tmpfile)
+    novel_table_mock = NovelTableManager(file_path=tmpfile)
 
     item = {
         'domain': 'example.com',
@@ -21,6 +21,6 @@ def NovelTableMock():
 
     novel_table_mock.insert_novel(item)
 
-    yield NovelTable(file_path=tmpfile)
+    yield NovelTableManager(file_path=tmpfile)
 
     os.remove(tmpfile)

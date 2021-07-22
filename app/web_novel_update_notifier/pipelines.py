@@ -6,14 +6,14 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from web_novel_update_notifier.lib.slack_webhook import SlackWebhook
-from web_novel_update_notifier.lib.novel_table import NovelTable
+from web_novel_update_notifier.lib.novel_table_manager import NovelTableManager
 
 
 class WebNovelUpdateNotifierPipeline(object):
     def __init__(self, settings, *args, **kwargs):
         super(WebNovelUpdateNotifierPipeline, self).__init__(*args, **kwargs)
 
-        self.novel_table = NovelTable(file_path='db.sqlite3')
+        self.novel_table = NovelTableManager()
 
         self.slack_webhook = SlackWebhook(
             slack_url=settings.get('SLACK_URL'),
