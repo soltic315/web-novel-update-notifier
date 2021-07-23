@@ -50,17 +50,16 @@ class NovelTableManager():
     def insert_novel(self, item):
         try:
             with self.create_session() as session:
-
-                    novel = Novel(
-                        domain=item['domain'],
-                        novel_id=item['novel_id'],
-                        title=item['title'],
-                        author=item['author'],
-                        latest_url=item['latest_url'],
-                        updated_at=item['updated_at'],
-                    )
-                    session.add(novel)
-                    logging.info(f'Insert {item}')
+                novel = Novel(
+                    domain=item['domain'],
+                    novel_id=item['novel_id'],
+                    title=item['title'],
+                    author=item['author'],
+                    latest_url=item['latest_url'],
+                    updated_at=item['updated_at'],
+                )
+                session.add(novel)
+                logging.info(f'Insert {item}')
             return True
         except:
             return False
@@ -86,4 +85,4 @@ class NovelTableManager():
     def is_novel_updated(self, item):
         with self.create_session() as session:
             novel = session.query(Novel).filter(Novel.domain == item['domain'], Novel.novel_id == item['novel_id']).first()
-            return novel.latest_url != item['latest_url']
+            return item['updated_at'] > novel.updated_at

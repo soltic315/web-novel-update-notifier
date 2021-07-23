@@ -17,6 +17,8 @@ def run_crawl():
         runner.crawl('narou')
     if os.environ.get('HAMELN_ID', '') != "" and os.environ.get('HAMELN_PW', '') != "":
         runner.crawl('hameln')
+    if os.environ.get('KAKUYOMU_ID', '') != "":
+        runner.crawl('kakuyomu')
 
 
 def _main():

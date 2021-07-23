@@ -95,6 +95,7 @@ NAROU_ID = os.environ.get('NAROU_ID', '')
 NAROU_PW = os.environ.get('NAROU_PW', '')
 HAMELN_ID = os.environ.get('HAMELN_ID', '')
 HAMELN_PW = os.environ.get('HAMELN_PW', '')
+KAKUYOMU_ID = os.environ.get('KAKUYOMU_ID', '')
 
 SLACK_URL = os.environ.get('SLACK_URL', '')
 SLACK_CHANNEL = os.environ.get('SLACK_CHANNEL', '')

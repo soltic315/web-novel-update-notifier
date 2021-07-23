@@ -72,17 +72,18 @@ class TestNovelTableManager():
             'title': 'hoge',
             'author': 'fuga',
             'novel_id': '00000',
-            'updated_at': datetime.datetime(2000, 1, 1, 0, 0),
-            'latest_url': 'https://example.com/novel/00000/1.html'
+            'updated_at': datetime.datetime(2000, 1, 2, 0, 0),
+            'latest_url': 'https://example.com/novel/00000/2.html'
         }
-        assert NovelTableMock.is_novel_updated(item) == False, '正常系：更新されていない小説の更新判定'
+        assert NovelTableMock.is_novel_updated(item) == True, '正常系：更新されている小説の更新判定'
 
         item = {
             'domain': 'example.com',
             'title': 'hoge',
             'author': 'fuga',
             'novel_id': '00000',
-            'updated_at': datetime.datetime(2000, 1, 2, 0, 0),
-            'latest_url': 'https://example.com/novel/00000/2.html'
+            'updated_at': datetime.datetime(2000, 1, 1, 0, 0),
+            'latest_url': 'https://example.com/novel/00000/1.html'
         }
-        assert NovelTableMock.is_novel_updated(item) == True, '異常系：更新されている小説の更新判定'
+        assert NovelTableMock.is_novel_updated(item) == False, '異常系：更新されていない小説の更新判定'
+

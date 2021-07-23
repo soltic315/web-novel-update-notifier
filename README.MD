@@ -3,6 +3,7 @@ WebNovelUpdateNotifier is a tool for notification of web novel (e.g. 小説家�
 The following platforms are supported.  
 - [小説家になろう](https://syosetu.com/)
 - [ハーメルン](https://syosetu.org/)
+- [カクヨム](https://kakuyomu.jp/)
 
 ![image](https://user-images.githubusercontent.com/81360623/119659630-4eee0f80-be69-11eb-87d8-33b0eb938618.png)
 
@@ -32,7 +33,10 @@ The following platforms are supported.
     # ハーメルン Account information (Optional)
     HAMELN_ID=
     HAMELN_PW=
-    
+
+    # カクヨム Account information (Optional)
+    KAKUYOMU_ID=
+
     # Crawling interval minutes (Optional, default=30)
     INTERVAL_MINUTES=
 
